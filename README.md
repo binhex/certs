@@ -8,7 +8,11 @@ Self-signed certificates used by Docker images.
 
 **Build notes**
 
-N/A
+Command used to generare self signed certs for OpenSSL 1.1.0e:-
+
+```
+sudo openssl req -x509 -nodes -days 3650 -newkey rsa:4096 -keyout /tmp/server.key -out /tmp/server.cert
+```
 
 **Notes**
 
