@@ -1,20 +1,30 @@
-**Application**
+# Self-signed Certificate Generation
+
+## Application
 
 N/A
 
-**Description**
+## Description
 
 Self-signed certificates used by Docker images.
 
-**Build notes**
+## Build notes
 
-Command used to generare self signed certs for OpenSSL 1.1.0e:-
+Command used to generare self signed certs (tested with OpenSSL v3.5.0):-
 
+```bash
+openssl req \
+  -x509 \
+  -newkey 'rsa:4096' \
+  -sha256 \
+  -days '3650' \
+  -nodes \
+  -keyout './self-signed.key' \
+  -out './self-signed.crt' \
+  -subj '/CN=localhost'
 ```
-sudo openssl req -x509 -nodes -days 3650 -newkey rsa:4096 -keyout /tmp/server.key -out /tmp/server.cert
-```
 
-**Notes**
+## Notes
 
 N/A
 
